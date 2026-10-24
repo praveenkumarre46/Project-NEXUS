@@ -1,0 +1,2142 @@
+{
+  "success": true,
+  "data": [
+    {
+      "command": "meta",
+      "dumpVersion": 2
+    },
+    {
+      "command": "add",
+      "parent": "/body",
+      "type": "table",
+      "props": {
+        "cols": "3",
+        "rows": "19",
+        "skipDefaultBorders": "true",
+        "style": "12",
+        "direction": "ltr",
+        "border": "none;4;#000000;0",
+        "width": "auto",
+        "indent": "0",
+        "layout": "autofit",
+        "tblLook": "04A0",
+        "colWidths": "662dxa,3816dxa,4876dxa"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[1]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[1]/tc[1]/p[last()]",
+      "props": {
+        "align": "center",
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[1]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "bold": "true",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Method"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[1]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[1]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[1]/tc[2]/p[last()]",
+      "props": {
+        "align": "center",
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[1]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "bold": "true",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Endpoint"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[1]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[1]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[1]/tc[3]/p[last()]",
+      "props": {
+        "align": "center",
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[1]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "bold": "true",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Purpose"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[1]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[2]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[2]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[2]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[2]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[2]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[2]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[2]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/auth/login"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[2]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[2]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[2]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[2]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Authenticate a user"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[2]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[3]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[3]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[3]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[3]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[3]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[3]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[3]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/auth/refresh"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[3]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[3]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[3]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[3]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Obtain a refreshed access token, if refresh tokens are adopted"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[3]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[4]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[4]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[4]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[4]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[4]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[4]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[4]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/auth/logout"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[4]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[4]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[4]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[4]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "End or revoke the current session"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[4]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[5]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[5]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[5]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[5]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[5]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[5]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[5]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/me"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[5]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[5]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[5]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[5]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Return the authenticated user's profile"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[5]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[6]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[6]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[6]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[6]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[6]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[6]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[6]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/devices"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[6]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[6]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[6]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[6]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "List devices the user is authorized to access"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[6]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[7]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[7]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[7]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[7]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[7]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[7]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[7]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/devices/{device_id}"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[7]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[7]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[7]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[7]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Retrieve a device's registration and health status"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[7]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[8]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[8]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[8]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[8]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[8]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[8]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[8]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[8]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[8]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[8]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[8]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Submit a task"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[8]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[9]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[9]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[9]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[9]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[9]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[9]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[9]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[9]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[9]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[9]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[9]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "List the user's authorized task history"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[9]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[10]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[10]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[10]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[10]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[10]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[10]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[10]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks/{task_id}"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[10]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[10]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[10]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[10]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Retrieve task status and summary"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[10]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[11]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[11]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[11]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[11]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[11]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[11]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[11]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks/{task_id}/steps"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[11]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[11]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[11]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[11]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Retrieve step-level progress"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[11]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[12]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[12]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[12]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[12]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[12]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[12]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[12]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks/{task_id}/result"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[12]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[12]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[12]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[12]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Retrieve the available task result"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[12]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[13]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[13]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[13]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[13]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[13]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[13]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[13]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks/{task_id}/cancel"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[13]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[13]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[13]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[13]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Request task cancellation"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[13]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[14]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[14]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[14]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[14]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[14]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[14]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[14]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/tasks/{task_id}/approvals/{approval_id}"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[14]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[14]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[14]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[14]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Submit an approval or rejection decision"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[14]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[15]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[15]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[15]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[15]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[15]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[15]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[15]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/memories"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[15]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[15]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[15]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[15]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "List the user's authorized memories"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[15]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[16]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[16]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[16]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "POST"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[16]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[16]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[16]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[16]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/memories"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[16]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[16]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[16]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[16]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Create a memory"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[16]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[17]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[17]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[17]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "GET"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[17]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[17]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[17]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[17]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/memories/{memory_id}"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[17]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[17]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[17]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[17]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Inspect a memory"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[17]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[18]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[18]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[18]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "PATCH"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[18]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[18]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[18]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[18]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/memories/{memory_id}"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[18]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[18]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[18]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[18]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Update a memory"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[18]/tc[3]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[19]/tc[1]",
+      "props": {
+        "width": "662dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[19]/tc[1]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[19]/tc[1]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "DELETE"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[19]/tc[1]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[19]/tc[2]",
+      "props": {
+        "width": "3816dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[19]/tc[2]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[19]/tc[2]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Courier New",
+        "font.ea": "Courier New",
+        "size": "10pt",
+        "font.cs": "Courier New",
+        "color": "#000000",
+        "text": "/v1/memories/{memory_id}"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[19]/tc[2]/p[last()]",
+      "type": "r"
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[19]/tc[3]",
+      "props": {
+        "width": "4876dxa",
+        "valign": "center",
+        "padding": "15",
+        "skipGridSync": "true"
+      }
+    },
+    {
+      "command": "set",
+      "path": "/body/tbl[last()]/tr[19]/tc[3]/p[last()]",
+      "props": {
+        "firstLineIndent": "0pt",
+        "indent": "0pt",
+        "rightIndent": "0pt"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[19]/tc[3]/p[last()]",
+      "type": "r",
+      "props": {
+        "font.latin": "Times New Roman",
+        "font.ea": "Times New Roman",
+        "size": "12pt",
+        "font.cs": "Times New Roman",
+        "color": "#000000",
+        "text": "Request deletion of a memory"
+      }
+    },
+    {
+      "command": "add",
+      "parent": "/body/tbl[last()]/tr[19]/tc[3]/p[last()]",
+      "type": "r"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXUS — Architecture Overview</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    font-size: 14px; line-height: 1.6;
+    color: #1f2328; background: #ffffff;
+    padding: 32px 16px 48px;
+  }
+  .page { max-width: 760px; margin: 0 auto; }
+
+  /* Header */
+  .header { border-bottom: 2px solid #e5e7eb; padding-bottom: 20px; margin-bottom: 28px; }
+  .header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.3px; color: #1f2328; }
+  .header .sub { font-size: 13px; color: #57606a; margin-top: 4px; }
+  .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .badge {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.2px;
+    background: #f7f8fa; border: 1px solid #e5e7eb; color: #57606a;
+  }
+  .badge.blue { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+  .badge.purple { background: #faf5ff; border-color: #ddd6fe; color: #6d28d9; }
+  .badge.green { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+
+  /* Sections */
+  h2 { font-size: 15px; font-weight: 700; color: #1f2328; margin: 28px 0 10px;
+       padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; letter-spacing: -0.1px; }
+  h3 { font-size: 13px; font-weight: 700; color: #1f2328; margin: 16px 0 8px; }
+
+  /* Vision block */
+  .vision { background: #f7f8fa; border: 1px solid #e5e7eb; border-left: 4px solid #3b82d4;
+            border-radius: 6px; padding: 14px 16px; margin-bottom: 8px; }
+  .vision p { margin: 4px 0; font-size: 13.5px; }
+  .vision strong { color: #3b82d4; }
+
+  /* Key-value table */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+  th { background: #f7f8fa; text-align: left; padding: 7px 10px; font-weight: 600;
+       color: #57606a; border: 1px solid #e5e7eb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  td { padding: 7px 10px; border: 1px solid #e5e7eb; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfc; }
+  td code { font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px;
+            background: #f0f2f5; padding: 1px 5px; border-radius: 3px; }
+
+  /* Architecture boxes */
+  .arch-container {
+    display: grid; grid-template-columns: 1fr; gap: 3px;
+    border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;
+    margin: 10px 0;
+  }
+  .arch-layer {
+    padding: 10px 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .arch-layer.client   { background: #eff6ff; }
+  .arch-layer.backend  { background: #faf5ff; }
+  .arch-layer.bridge   { background: #f0fdf4; }
+  .arch-layer.data     { background: #fff7ed; }
+  .arch-arrow { text-align: center; font-size: 11px; color: #57606a; padding: 2px 0; background: #f7f8fa; }
+  .layer-icon { width: 32px; height: 32px; border-radius: 6px; display: flex;
+                align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .layer-text h4 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .layer-text p  { font-size: 12px; color: #57606a; }
+  .layer-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+  .chip { font-size: 11px; background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.1);
+          border-radius: 4px; padding: 1px 7px; }
+
+  /* Trust boundary grid */
+  .trust-grid { display: grid; grid-template-columns: 80px 1fr; gap: 0; border: 1px solid #e5e7eb; border-radius: 6px; overflow: hidden; }
+  .trust-label { background: #1f2328; color: #fff; font-size: 12px; font-weight: 700;
+                 padding: 10px 8px; display: flex; align-items: center; justify-content: center;
+                 text-align: center; border-bottom: 1px solid #3a3f47; }
+  .trust-content { padding: 10px 14px; border-bottom: 1px solid #e5e7eb; font-size: 12.5px; }
+  .trust-title { font-weight: 700; margin-bottom: 2px; font-size: 12px; }
+  .trust-rule  { color: #57606a; font-size: 12px; }
+  .trust-label:last-of-type, .trust-content:last-child { border-bottom: none; }
+
+  /* Tier table */
+  .tier-0 { background: #f0fdf4; }
+  .tier-1 { background: #fffbeb; }
+  .tier-2 { background: #fff7ed; }
+  .tier-3 { background: #fef2f2; }
+  .tier-tag { display: inline-block; font-size: 11px; font-weight: 700; border-radius: 3px;
+              padding: 1px 6px; }
+  .t0 { background: #bbf7d0; color: #166534; }
+  .t1 { background: #fde68a; color: #92400e; }
+  .t2 { background: #fed7aa; color: #9a3412; }
+  .t3 { background: #fecaca; color: #991b1b; }
+
+  /* Policy layers */
+  .policy-layers { display: flex; flex-direction: column; gap: 2px; }
+  .policy-layer { display: flex; align-items: stretch; border-radius: 4px; overflow: hidden; }
+  .pl-num { width: 32px; min-width: 32px; background: #1f2328; color: #fff; font-size: 11px;
+            font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .pl-body { flex: 1; padding: 6px 12px; font-size: 12.5px; font-weight: 600; }
+  .pl-deny { font-size: 11px; color: #dc2626; font-weight: 400; margin-left: 6px; }
+  .pl-1 .pl-body { background: #fef2f2; } .pl-2 .pl-body { background: #fff7ed; }
+  .pl-3 .pl-body { background: #fffbeb; } .pl-4 .pl-body { background: #f0fdf4; }
+  .pl-5 .pl-body { background: #eff6ff; } .pl-6 .pl-body { background: #f5f3ff; }
+  .pl-7 .pl-body { background: #fdf4ff; } .pl-8 .pl-body { background: #f0fdf4; }
+  .pl-allow { padding: 8px 12px; background: #166534; color: #fff; font-size: 12px;
+              font-weight: 700; text-align: center; border-radius: 4px; margin-top: 4px; }
+
+  /* State machine */
+  .states-container { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .state-box { border: 1px solid #e5e7eb; border-radius: 6px; padding: 8px 12px;
+               font-size: 12px; font-weight: 600; }
+  .state-box.start   { background: #f7f8fa; border-style: dashed; }
+  .state-box.running { background: #eff6ff; border-color: #93c5fd; color: #1d4ed8; }
+  .state-box.wait    { background: #fffbeb; border-color: #fcd34d; color: #92400e; }
+  .state-box.interrupted { background: #fff7ed; border-color: #fb923c; color: #9a3412; }
+  .state-box.terminal-ok  { background: #f0fdf4; border-color: #86efac; color: #166534; }
+  .state-box.terminal-bad { background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
+  .state-note { background: #fef9c3; border: 1px solid #fde047; border-radius: 4px;
+                padding: 7px 12px; font-size: 12px; margin-top: 8px; }
+
+  /* Phase timeline */
+  .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0; }
+  .phase-card { border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; }
+  .phase-wk { font-size: 10px; font-weight: 700; color: #57606a; text-transform: uppercase;
+              letter-spacing: 0.4px; }
+  .phase-name { font-size: 12px; font-weight: 700; margin: 3px 0 4px; }
+  .phase-goal { font-size: 11px; color: #57606a; }
+  .phase-gate { font-size: 10.5px; font-weight: 700; margin-top: 6px; }
+  .gate-yes { color: #166534; } .gate-no { color: #57606a; }
+  .p0 { border-top: 3px solid #64748b; } .p1 { border-top: 3px solid #3b82d4; }
+  .p2 { border-top: 3px solid #8b5cf6; } .p3 { border-top: 3px solid #f59e0b; }
+  .p4 { border-top: 3px solid #10b981; } .p5 { border-top: 3px solid #ec4899; }
+  .p6 { border-top: 3px solid #f97316; } .p7 { border-top: 3px solid #dc2626; }
+
+  /* MVP scope columns */
+  .scope-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .scope-col h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .scope-col ul { list-style: none; margin-top: 6px; }
+  .scope-col li { font-size: 12.5px; padding: 3px 0; padding-left: 18px; position: relative; }
+  .scope-col li::before { position: absolute; left: 0; font-size: 12px; }
+  .included li::before { content: "✓"; color: #16a34a; }
+  .excluded li::before { content: "✗"; color: #dc2626; }
+
+  /* Rules list */
+  .rules { counter-reset: rule; list-style: none; margin: 8px 0; }
+  .rules li { counter-increment: rule; display: flex; gap: 10px; padding: 6px 10px;
+              font-size: 12.5px; border-bottom: 1px solid #f0f0f0; align-items: flex-start; }
+  .rules li:last-child { border-bottom: none; }
+  .rules li::before { content: counter(rule); min-width: 20px; height: 20px; border-radius: 50%;
+                      background: #1f2328; color: #fff; font-size: 11px; font-weight: 700;
+                      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+  /* Deploy SVG */
+  .deploy-diagram { background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 6px;
+                    padding: 20px; text-align: center; margin: 10px 0; }
+
+  /* Footer */
+  .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e7eb;
+            text-align: center; font-size: 12px; color: #57606a; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  
+  <div class="header">
+    <h1>NEXUS — Architecture Overview</h1>
+    <div class="sub">Personal AI computer companion · High-level design for team presentation</div>
+    <div class="badge-row">
+      <span class="badge blue">Python + FastAPI</span>
+      <span class="badge blue">PostgreSQL</span>
+      <span class="badge purple">Local-first AI</span>
+      <span class="badge green">Windows 11</span>
+      <span class="badge">3 Developers</span>
+      <span class="badge">12 Weeks</span>
+      <span class="badge">LAN Deployment</span>
+    </div>
+  </div>
+
+  
+  <h2>What is NEXUS?</h2>
+  <div class="vision">
+    <p>NEXUS is a <strong>personal AI computer companion</strong> with two equally important capabilities:</p>
+    <p style="margin-top:6px">🖥️ <strong>Computer automation</strong> — understand requests and safely execute multi-step tasks on a user's Windows 11 computer via explicitly permitted tools.</p>
+    <p style="margin-top:4px">🧠 <strong>Context awareness</strong> — maintain persistent knowledge of projects, preferences, ongoing tasks, and prior interactions.</p>
+    <p style="margin-top:8px;font-size:12.5px;color:#57606a">NEXUS goes beyond a chatbot: it <em>plans</em>, <em>acts</em> through explicitly permitted tools, <em>observes</em> outcomes, <em>recovers</em> from failures, and <em>explains</em> what happened.</p>
+  </div>
+
+  
+  <h2>Core Technology Decisions</h2>
+  <table>
+    <tr><th>Concern</th><th>Decision</th></tr>
+    <tr><td>Target platform</td><td>Windows 11 (per-user)</td></tr>
+    <tr><td>Dev environment</td><td>Ubuntu on WSL 2</td></tr>
+    <tr><td>Backend</td><td>Python + FastAPI (modular monolith)</td></tr>
+    <tr><td>Database</td><td>PostgreSQL</td></tr>
+    <tr><td>Interface</td><td>Terminal-first CLI</td></tr>
+    <tr><td>AI strategy</td><td>Local-first · hybrid-capable · zero-budget</td></tr>
+    <tr><td>Execution policy</td><td>Tiered autonomy — explicit permissions + risk classification</td></tr>
+    <tr><td>Context / memory</td><td>Persistent, user-controlled memory in PostgreSQL</td></tr>
+    <tr><td>Initial deployment</td><td>Local network (LAN) — no public internet required</td></tr>
+  </table>
+
+  
+  <h2>System Layers</h2>
+  <div class="arch-container">
+    <div class="arch-layer client">
+      <div class="layer-icon" style="background:#dbeafe">🖥️</div>
+      <div class="layer-text">
+        <h4>Client Layer — on each user's Windows PC</h4>
+        <p>Terminal CLI: authenticate, submit requests, display progress, collect approvals</p>
+        <div class="layer-chips"><span class="chip">auth</span><span class="chip">task commands</span><span class="chip">progress display</span><span class="chip">approval prompts</span></div>
+      </div>
+    </div>
+    <div class="arch-arrow">↕ HTTPS (authenticated) — LAN</div>
+    <div class="arch-layer backend">
+      <div class="layer-icon" style="background:#ede9fe">⚙️</div>
+      <div class="layer-text">
+        <h4>Shared NEXUS Backend — modular monolith</h4>
+        <p>FastAPI → Application Services → Domain Rules → Execution Engine → AI Services → Infrastructure</p>
+        <div class="layer-chips">
+          <span class="chip">Identity &amp; Access</span><span class="chip">Policy Engine (8 layers)</span>
+          <span class="chip">Task Orchestrator</span><span class="chip">Model Adapter</span>
+          <span class="chip">Memory Service</span><span class="chip">Audit</span>
+        </div>
+      </div>
+    </div>
+    <div class="arch-arrow">↕ Authenticated outbound polling (bridge → backend, no inbound firewall rule needed)</div>
+    <div class="arch-layer bridge">
+      <div class="layer-icon" style="background:#dcfce7">🔧</div>
+      <div class="layer-text">
+        <h4>Per-Device Execution Layer — on each user's Windows PC</h4>
+        <p>Windows Bridge: executes only allowlisted tools after independent validation · path canonicalization · scoped directories</p>
+        <div class="layer-chips"><span class="chip">device registry</span><span class="chip">registered tools only</span><span class="chip">path validation</span><span class="chip">operation journal</span></div>
+      </div>
+    </div>
+    <div class="arch-arrow">↕ Controlled repository layer (no direct CLI → DB writes)</div>
+    <div class="arch-layer data">
+      <div class="layer-icon" style="background:#fed7aa">🗄️</div>
+      <div class="layer-text">
+        <h4>Persistence — PostgreSQL</h4>
+        <p>tasks · steps · attempts · memory · approvals · devices · audit events · sessions</p>
+        <div class="layer-chips"><span class="chip">ownership filters</span><span class="chip">transaction safety</span><span class="chip">idempotency keys</span><span class="chip">generation fencing</span></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <h2>Physical Deployment — Option A (MVP default)</h2>
+  <div class="deploy-diagram">
+    <svg width="680" height="240" font-family="-apple-system, 'Segoe UI', sans-serif">
+      
+      <rect x="220" y="10" width="240" height="90" rx="8" fill="#f7f8fa" stroke="#e5e7eb" stroke-width="1.5"></rect>
+      <text x="340" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2328">Designated Team Host (LAN)</text>
+      <text x="340" y="47" text-anchor="middle" font-size="10.5" fill="#57606a">FastAPI Backend</text>
+      <text x="340" y="62" text-anchor="middle" font-size="10.5" fill="#57606a">PostgreSQL</text>
+      <text x="340" y="77" text-anchor="middle" font-size="10.5" fill="#57606a">Local AI Model Runtime</text>
+      
+      <line x1="240" y1="100" x2="100" y2="145" stroke="#94a3b8" stroke-width="1"></line>
+      <line x1="340" y1="100" x2="340" y2="145" stroke="#94a3b8" stroke-width="1"></line>
+      <line x1="440" y1="100" x2="580" y2="145" stroke="#94a3b8" stroke-width="1"></line>
+      
+      <text x="155" y="125" text-anchor="middle" font-size="9" fill="#57606a">HTTPS (LAN)</text>
+      <text x="340" y="130" text-anchor="middle" font-size="9" fill="#57606a">HTTPS (LAN)</text>
+      <text x="525" y="125" text-anchor="middle" font-size="9" fill="#57606a">HTTPS (LAN)</text>
+      
+      <rect x="20" y="145" width="160" height="80" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"></rect>
+      <text x="100" y="165" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">PC-A (User A)</text>
+      <text x="100" y="182" text-anchor="middle" font-size="10.5" fill="#57606a">CLI-A</text>
+      <text x="100" y="198" text-anchor="middle" font-size="10.5" fill="#57606a">Windows Bridge-A</text>
+      <text x="100" y="215" text-anchor="middle" font-size="9" fill="#9ca3af">outbound poll →</text>
+      
+      <rect x="260" y="145" width="160" height="80" rx="8" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1.5"></rect>
+      <text x="340" y="165" text-anchor="middle" font-size="11" font-weight="700" fill="#6d28d9">PC-B (User B)</text>
+      <text x="340" y="182" text-anchor="middle" font-size="10.5" fill="#57606a">CLI-B</text>
+      <text x="340" y="198" text-anchor="middle" font-size="10.5" fill="#57606a">Windows Bridge-B</text>
+      <text x="340" y="215" text-anchor="middle" font-size="9" fill="#9ca3af">outbound poll →</text>
+      
+      <rect x="500" y="145" width="160" height="80" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"></rect>
+      <text x="580" y="165" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">PC-C (User C)</text>
+      <text x="580" y="182" text-anchor="middle" font-size="10.5" fill="#57606a">CLI-C</text>
+      <text x="580" y="198" text-anchor="middle" font-size="10.5" fill="#57606a">Windows Bridge-C</text>
+      <text x="580" y="215" text-anchor="middle" font-size="9" fill="#9ca3af">outbound poll →</text>
+    </svg>
+    <p style="font-size:11.5px;color:#57606a;margin-top:4px">Bridges poll <strong>outbound</strong> — no inbound firewall holes. One backend serves all three users. Single point of failure: backup strategy required.</p>
+  </div>
+
+  
+  <h2>Trust Boundaries</h2>
+  <div class="trust-grid">
+    <div class="trust-label">A<br />Client → Backend</div>
+    <div class="trust-content"><div class="trust-title">Every request authenticated</div><div class="trust-rule">Identity comes from validated credentials — never from a user ID in the request body.</div></div>
+    <div class="trust-label">B<br />Backend → Model</div>
+    <div class="trust-content"><div class="trust-title">Model output is untrusted input</div><div class="trust-rule">Model cannot authorize actions, touch the database, or bypass policy. It only proposes.</div></div>
+    <div class="trust-label">C<br />Backend → Bridge</div>
+    <div class="trust-content"><div class="trust-title">Bridge validates independently</div><div class="trust-rule">Bridge authenticates and validates every operation on <em>that</em> device — never trusts the backend blindly.</div></div>
+    <div class="trust-label">D<br />App → Database</div>
+    <div class="trust-content"><div class="trust-title">Repository layer enforces ownership</div><div class="trust-rule">Ownership checks on all user-owned records. Transactions keep task state consistent.</div></div>
+    <div class="trust-label">E<br />Device → Device</div>
+    <div class="trust-content"><div class="trust-title">No cross-device file access</div><div class="trust-rule">One teammate's bridge is never a route to another's files. Authorization checked per operation.</div></div>
+  </div>
+  <p style="font-size:12px;color:#dc2626;font-weight:600;margin-top:8px">⚠ "Local network" does NOT mean "trusted."</p>
+
+  
+  <h2>Tiered Autonomy Policy</h2>
+  <table>
+    <tr><th>Tier</th><th>Action Class</th><th>Behavior</th></tr>
+    <tr class="tier-0"><td><span class="tier-tag t0">Tier 0 — Read</span></td><td>Search permitted folders, read documents, inspect task history</td><td>Execute without per-action approval when the user has granted the relevant permission</td></tr>
+    <tr class="tier-1"><td><span class="tier-tag t1">Tier 1 — Reversible</span></td><td>Create draft/file in a designated workspace, launch an approved application</td><td>Execute automatically only within a clearly configured permission scope</td></tr>
+    <tr class="tier-2"><td><span class="tier-tag t2">Tier 2 — Consequential</span></td><td>Overwrite files, move important data, change system settings</td><td><strong>Require explicit user confirmation</strong> before execution</td></tr>
+    <tr class="tier-3"><td><span class="tier-tag t3">Tier 3 — Prohibited</span></td><td>Bypass access controls, access another user's files, execute unrestricted model-generated commands</td><td><strong>Reject unconditionally</strong> — even if requested by the model</td></tr>
+  </table>
+
+  
+  <h2>8-Layer Policy Engine</h2>
+  <p style="font-size:12.5px;color:#57606a;margin-bottom:10px">Every proposed operation passes all 8 layers in strict order. A DENY at any layer cannot be overridden by a later layer.</p>
+  <div class="policy-layers">
+    <div class="policy-layer pl-1"><div class="pl-num">L1</div><div class="pl-body">Hard prohibitions <span class="pl-deny">→ DENY if prohibited or unsupported</span></div></div>
+    <div class="policy-layer pl-2"><div class="pl-num">L2</div><div class="pl-body">Tool capability registered and enabled <span class="pl-deny">→ DENY if unknown or disabled</span></div></div>
+    <div class="policy-layer pl-3"><div class="pl-num">L3</div><div class="pl-body">Identity and ownership verified <span class="pl-deny">→ DENY if user not owner or device not authorized</span></div></div>
+    <div class="policy-layer pl-4"><div class="pl-num">L4</div><div class="pl-body">Resource permissions (active grant for directory / app ID) <span class="pl-deny">→ DENY if no grant</span></div></div>
+    <div class="policy-layer pl-5"><div class="pl-num">L5</div><div class="pl-body">Operation constraints (arguments valid, limits not exceeded) <span class="pl-deny">→ DENY if violated</span></div></div>
+    <div class="policy-layer pl-6"><div class="pl-num">L6</div><div class="pl-body">Risk classification (Tier 0–3) <span class="pl-deny">→ DENY or REQUIRE_APPROVAL by tier</span></div></div>
+    <div class="policy-layer pl-7"><div class="pl-num">L7</div><div class="pl-body">Approval validation (valid, unexpired, fingerprint matches) <span class="pl-deny">→ REQUIRE_APPROVAL if missing</span></div></div>
+    <div class="policy-layer pl-8"><div class="pl-num">L8</div><div class="pl-body">Execution-time revalidation (all prior layers rechecked) <span class="pl-deny">→ DENY if anything changed</span></div></div>
+    <div class="pl-allow">✓ ALLOW → persist intent → dispatch to bridge</div>
+  </div>
+  <p style="font-size:12px;color:#57606a;margin-top:8px">All decisions (ALLOW / DENY / REQUIRE_APPROVAL) are written to the audit log. Policy service unavailable = no dispatch.</p>
+
+  
+  <h2>Task State Machine</h2>
+  <div class="states-container">
+    <div class="state-box start">⚑ Initial: QUEUED</div>
+    <div class="state-box running">▶ RUNNING</div>
+    <div class="state-box wait">⏸ WAITING_FOR_APPROVAL</div>
+    <div class="state-box interrupted">⚡ INTERRUPTED</div>
+    <div class="state-box terminal-ok">✓ SUCCEEDED</div>
+    <div class="state-box terminal-bad">✗ FAILED</div>
+    <div class="state-box terminal-bad">⊘ CANCELLED</div>
+  </div>
+  <div class="state-note">
+    <strong>Forbidden transitions:</strong> SUCCEEDED → RUNNING · CANCELLED → QUEUED · WAITING_FOR_APPROVAL → SUCCEEDED without execution · INTERRUPTED → SUCCEEDED without reconciliation · any state to SUCCEEDED on model/bridge claim alone · any state to CANCELLED while an external effect is unresolved.
+  </div>
+  <p style="font-size:12px;color:#57606a;margin-top:6px">A task is only marked SUCCEEDED after a correlated result is <em>persisted and verified</em> in the database. A <strong>timeout is not proof of failure</strong> — uncertain outcomes are surfaced to the user.</p>
+
+  
+  <h2>Component Responsibilities</h2>
+  <table>
+    <tr><th>Component</th><th>Does</th><th>Must NOT do</th></tr>
+    <tr><td><strong>CLI client</strong></td><td>Submit requests, display task status, collect decisions</td><td>Make authorization decisions</td></tr>
+    <tr><td><strong>FastAPI layer</strong></td><td>Validate requests, authenticate callers, expose API contracts</td><td>Execute arbitrary model-generated code</td></tr>
+    <tr><td><strong>Identity &amp; access</strong></td><td>Resolve users, devices and permissions</td><td>Trust a user-supplied device ID without verification</td></tr>
+    <tr><td><strong>Planning service</strong></td><td>Interpret requests, propose structured plans</td><td>Grant permissions or declare unverified success</td></tr>
+    <tr><td><strong>Policy engine</strong></td><td>Validate tool, user, device, approval requirements (8 layers)</td><td>Delegate authorization to the AI model</td></tr>
+    <tr><td><strong>Task orchestrator</strong></td><td>Manage states, step ordering, cancellation, recovery</td><td>Lose durable state when a process restarts</td></tr>
+    <tr><td><strong>Model adapter</strong></td><td>Stable interface to the selected model runtime</td><td>Couple business logic to one model's format</td></tr>
+    <tr><td><strong>Memory service</strong></td><td>Retrieve and manage authorized context</td><td>Expose another user's memories</td></tr>
+    <tr><td><strong>Windows bridge</strong></td><td>Execute registered, permitted local operations</td><td>Accept unrestricted shell commands</td></tr>
+    <tr><td><strong>Audit &amp; diagnostics</strong></td><td>Record state transitions and outcomes</td><td>Store secrets or unnecessary private content</td></tr>
+  </table>
+
+  
+  <h2>MVP Scope</h2>
+  <div class="scope-cols">
+    <div class="scope-col included">
+      <h3 style="color:#166534">✓ Included</h3>
+      <ul>
+        <li>Terminal interaction and multi-step task planning</li>
+        <li>Windows bridge on each participating computer</li>
+        <li>Restricted file search and document reading</li>
+        <li>Approved file creation and app launching</li>
+        <li>User identity, device registration, ownership</li>
+        <li>Persistent tasks, progress, cancellation, recovery</li>
+        <li>User-controlled memory and project context</li>
+        <li>Tiered permissions, approval flows, audit logs</li>
+        <li>Automated tests and measured performance</li>
+      </ul>
+    </div>
+    <div class="scope-col excluded">
+      <h3 style="color:#dc2626">✗ Excluded from v1</h3>
+      <ul>
+        <li>Always-listening voice or full desktop GUI</li>
+        <li>Unrestricted shell execution</li>
+        <li>Unrestricted screen / mouse control</li>
+        <li>Training a foundation model</li>
+        <li>Paid infrastructure requirements</li>
+        <li>Public internet exposure</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <h2>12-Week Delivery Plan</h2>
+  <div class="phases">
+    <div class="phase-card p0">
+      <div class="phase-wk">Week 1</div>
+      <div class="phase-name">P0 Foundation</div>
+      <div class="phase-goal">Repo setup, tooling, hardware inventory, LAN connectivity</div>
+      <div class="phase-gate gate-no">No gate — checklist</div>
+    </div>
+    <div class="phase-card p1">
+      <div class="phase-wk">Week 2</div>
+      <div class="phase-name">P1 Contracts &amp; Persistence</div>
+      <div class="phase-goal">API contracts frozen, DB schema, auth skeleton, bridge enrollment</div>
+      <div class="phase-gate gate-yes">⬡ Gate 1: Contracts agreed</div>
+    </div>
+    <div class="phase-card p2">
+      <div class="phase-wk">Weeks 3–4</div>
+      <div class="phase-name">P2 First Vertical Slice</div>
+      <div class="phase-goal">CLI → backend → bridge → scoped file search → result visible</div>
+      <div class="phase-gate gate-yes">⬡ Gate 2: Slice works</div>
+    </div>
+    <div class="phase-card p3">
+      <div class="phase-wk">Weeks 5–6</div>
+      <div class="phase-name">P3 Safe Side Effects</div>
+      <div class="phase-goal">Policy, approvals, create-file tool, idempotency, recovery paths</div>
+      <div class="phase-gate gate-yes">⬡ Gate 3: Safe side effects</div>
+    </div>
+    <div class="phase-card p4">
+      <div class="phase-wk">Weeks 7–8</div>
+      <div class="phase-name">P4 Local AI &amp; Memory</div>
+      <div class="phase-goal">Validated local model, structured planner, memory, retrieval</div>
+      <div class="phase-gate gate-yes">⬡ Gate 4: AI &amp; memory</div>
+    </div>
+    <div class="phase-card p5">
+      <div class="phase-wk">Week 9</div>
+      <div class="phase-name">P5 User Workflows</div>
+      <div class="phase-goal">CLI history, approvals UX, diagnostics, document processing</div>
+      <div class="phase-gate gate-no">Week 9 deliverables</div>
+    </div>
+    <div class="phase-card p6">
+      <div class="phase-wk">Week 10</div>
+      <div class="phase-name">P6 Team Integration</div>
+      <div class="phase-goal">3 users/devices, isolation, concurrency, disconnect/restart</div>
+      <div class="phase-gate gate-yes">⬡ Gate 5: Team integration</div>
+    </div>
+    <div class="phase-card p7">
+      <div class="phase-wk">Weeks 11–12</div>
+      <div class="phase-name">P7 Hardening &amp; RC</div>
+      <div class="phase-goal">Backup/restore, security regression, performance, clean install, sign-off</div>
+      <div class="phase-gate gate-yes">⬡ Gate 6: Release candidate</div>
+    </div>
+  </div>
+
+  
+  <h2>Team Work Streams</h2>
+  <table>
+    <tr><th>Stream</th><th>Covers</th></tr>
+    <tr><td><strong>BE</strong> — Backend &amp; execution</td><td>FastAPI · PostgreSQL · auth · task state machine · workers · policy · approvals · audit · backup</td></tr>
+    <tr><td><strong>WB</strong> — Windows bridge &amp; tools</td><td>Native bridge · enrollment · polling · path validation · file search / read / create · app launch</td></tr>
+    <tr><td><strong>AI</strong> — AI, planning &amp; memory</td><td>Local model runtime · adapter · structured planner · memory · retrieval · grounding</td></tr>
+  </table>
+  <p style="font-size:12px;color:#57606a;margin-top:6px">Roles rotate every phase — every developer works in every area. Previous stream owner pairs with the new owner for the first days of each phase.</p>
+
+  
+  <h2>Key Design Rules (Non-negotiable)</h2>
+  <ul class="rules">
+    <li>The CLI never writes directly to PostgreSQL.</li>
+    <li>The planner proposes — application code authorizes. The planner cannot call arbitrary Windows functions.</li>
+    <li>API route handlers do not contain task state machine or authorization logic.</li>
+    <li>The bridge executes only registered local tools after its own independent validation.</li>
+    <li>A timeout is not proof of failure — uncertain outcomes are surfaced to the user, never assumed.</li>
+    <li>A task is only SUCCEEDED after a correlated result is persisted and verified.</li>
+    <li>"Local network" does not mean "trusted."</li>
+    <li>Model output is always untrusted input — it cannot authorize, touch the DB, or bypass policy.</li>
+    <li>Authorization filter runs before any content is exposed to the model.</li>
+    <li>Revoked devices remain revoked even after a database restore.</li>
+  </ul>
+
+  <div class="footer">Made with IBM Bob</div>
+</div>
+</body>
+</html>
